@@ -33,10 +33,7 @@ const Cards = () => {
       <div className="cardsDiv">
         {concerts.map((item, i) => {
           return (
-            <div
-              className="card"
-              // onClick={openPage}
-            >
+            <div className="card">
               <img
                 className="img"
                 src={item.img}
@@ -46,9 +43,6 @@ const Cards = () => {
                 }}
               />
               <h2 className="name">{item.name}</h2>
-              {/* <button class="favBtn" id="favBtn" onclick="addToFav">
-                ${!villains[i].isFav ? "❤" : "✘"}
-              </button> */}
             </div>
           );
         })}
