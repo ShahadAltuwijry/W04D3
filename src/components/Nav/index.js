@@ -13,6 +13,7 @@ const Nav = () => {
         <IoArrowBackCircleOutline
           className="icon"
           onClick={() => history.goBack()}
+          size="25px"
         />
         <li>
           <Link to="/">Home</Link>

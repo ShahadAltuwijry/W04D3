@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router";
-// import CardDetails from "./components/CardDetails";
 import "./style.css";
 
 const concerts = [
@@ -30,7 +29,7 @@ const Cards = () => {
   return (
     <div>
       <h1>Cards</h1>
-      
+
       <div className="cardsDiv">
         {concerts.map((item, i) => {
           return (
@@ -47,6 +46,9 @@ const Cards = () => {
                 }}
               />
               <h2 className="name">{item.name}</h2>
+              {/* <button class="favBtn" id="favBtn" onclick="addToFav">
+                ${!villains[i].isFav ? "❤" : "✘"}
+              </button> */}
             </div>
           );
         })}
