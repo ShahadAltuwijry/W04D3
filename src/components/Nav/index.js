@@ -15,7 +15,7 @@ const Nav = () => {
           onClick={() => history.goBack()}
         />
         <li>
-          <Link to="/ ">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/About">About</Link>
