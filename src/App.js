@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Favorite from "./components/Favorite";
 import Cards from "./components/Cards";
 import CardDetails from "./components/CardDetails";
 
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/About" component={About} />
-        <Route exact path="/Contact" component={Contact} />
+        <Route exact path="/Favorite" component={Favorite} />
         <Route exact path="/Cards" component={Cards} />
         <Route exact path="/CardDetails/:id" component={CardDetails} />
         <Route

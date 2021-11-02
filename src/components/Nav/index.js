@@ -22,7 +22,7 @@ const Nav = () => {
           <Link to="/About">About</Link>
         </li>
         <li>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/Favorite">Favorite</Link>
         </li>
         <li>
           <Link to="/Cards">Cards</Link>
