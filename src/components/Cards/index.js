@@ -1,5 +1,6 @@
 import React from "react";
-// import Card from "./components/Card";
+import { useHistory } from "react-router";
+// import CardDetails from "./components/CardDetails";
 import "./style.css";
 
 const concerts = [
@@ -20,14 +21,16 @@ const concerts = [
   },
 ];
 
-// const openPage = () => {
-
-// }
-
 const Cards = () => {
+  const history = useHistory();
+  const openPage = (id) => {
+    history.push(`/CardDetails/${id}`);
+  };
+
   return (
     <div>
       <h1>Cards</h1>
+      
       <div className="cardsDiv">
         {concerts.map((item, i) => {
           return (
@@ -35,7 +38,14 @@ const Cards = () => {
               className="card"
               // onClick={openPage}
             >
-              <img className="img" src={item.img} alt={item.name} />
+              <img
+                className="img"
+                src={item.img}
+                alt={item.name}
+                onClick={() => {
+                  openPage(item.id);
+                }}
+              />
               <h2 className="name">{item.name}</h2>
             </div>
           );

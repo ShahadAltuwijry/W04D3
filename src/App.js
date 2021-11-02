@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Cards from "./components/Cards";
+import CardDetails from "./components/CardDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/About" component={About} />
         <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Cards" component={Cards} />
+        <Route exact path="/CardDetails/:id" component={CardDetails} />
         <Route
           path="*"
           render={() => {
