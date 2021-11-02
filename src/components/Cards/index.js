@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import { useState } from "react";
 import "./style.css";
 
 const concerts = [
@@ -21,6 +22,8 @@ const concerts = [
 ];
 
 const Cards = () => {
+  const [search, setSearch] = useState("");
+
   const history = useHistory();
   const openPage = (id) => {
     history.push(`/CardDetails/${id}`);
@@ -28,25 +31,46 @@ const Cards = () => {
 
   return (
     <div>
-      <h1>Cards</h1>
+      {/*start of search function */}
+      <input
+        type="text"
+        placeholder="search..."
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
+      />
+            <h1>Cards</h1>
 
-      <div className="cardsDiv">
-        {concerts.map((item, i) => {
-          return (
-            <div className="card">
-              <img
-                className="img"
-                src={item.img}
-                alt={item.name}
-                onClick={() => {
-                  openPage(item.id);
-                }}
-              />
-              <h2 className="name">{item.name}</h2>
-            </div>
-          );
-        })}
+      <div className="searchDiv">
+        {concerts
+          .filter((val) => {
+            if (search == "") {
+              return "no words written";
+            } else if (
+              val.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((val, key) => {
+            return (
+              <div className="card">
+                <img
+                  className="img"
+                  src={val.img}
+                  alt={val.name}
+                  onClick={() => {
+                    openPage(val.id);
+                  }}
+                />
+                <h2 className="name">{val.name}</h2>
+              </div>
+            );
+          })}
       </div>
+      {/*end of search function */}
+
+
     </div>
   );
 };
